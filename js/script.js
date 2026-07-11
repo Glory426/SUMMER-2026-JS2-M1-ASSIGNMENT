@@ -80,4 +80,5 @@ table.addEventListener("click", (e) => {
         }
     });
 
-});
+ });
+ 
