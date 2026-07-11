@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-
+       
 // GET ADD EMPLOYEE FORM AND EMPLOYEE TABLE FROM THE DOM
 
    const form = document.getElementById("addForm");
@@ -16,6 +16,8 @@ window.addEventListener("load", () => {
       
   // PREVENT FORM SUBMISSION
    e.preventDefault();
+
+     }); // end submit event
 
 // GET THE VALUES FROM THE TEXT BOXES
 
@@ -70,15 +72,18 @@ window.addEventListener("load", () => {
 // DELETE EMPLOYEE
 
 table.addEventListener("click", (e) => {
-        if (e.target.tagName === "BUTTON") {
-            if (confirm("Are you sure you want to delete this employee?")) {
-                table.deleteRow(e.target.parentNode.parentNode.rowIndex);
+    if (e.target.tagName === "BUTTON") {
+        if (confirm("Are you sure you want to delete this employee?")) {
+            table.deleteRow(e.target.parentNode.parentNode.rowIndex);
 
-                count--;
-                empCount.value = count;
-            }
+            count--;
+            empCount.value = count;
         }
-    });
+    }
+});
 
- });
- 
+}); 
+
+
+
+
