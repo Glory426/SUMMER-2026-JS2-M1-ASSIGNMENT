@@ -79,17 +79,17 @@ window.addEventListener("load", () => {
 
   table.addEventListener("click", (e) => {
 
-        if (e.target.tagName === "BUTTON") {
+    if (e.target.tagName === "BUTTON") {
 
-            if (confirm("Are you sure you want to delete this employee?")) {
+        if (confirm("Are you sure you want to delete this employee?")) {
 
-                table.deleteRow(e.target.parentNode.parentNode.rowIndex);
+            table.deleteRow(e.target.parentNode.parentNode.rowIndex);
 
-                count--;
-                empCount.textContent = count;
-            }
+            count--;
+            empCount.textContent = count;
         }
+    }
 
-    });
+});
 
-
+});
