@@ -69,7 +69,7 @@
         empCount.value = count;
         console.log(count);
 
-// DELETE EMPLOYEE
+    // DELETE EMPLOYEE
 
 table.addEventListener("click", (e) => {
 
