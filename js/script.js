@@ -14,10 +14,8 @@ window.addEventListener("load", () => {
 
   form.addEventListener("submit", (e) => {
       
-  // PREVENT FORM SUBMISSION
+// PREVENT FORM SUBMISSION
     e.preventDefault();
-
-     }); // end submit event
 
 // GET THE VALUES FROM THE TEXT BOXES
 
@@ -72,7 +70,7 @@ window.addEventListener("load", () => {
 
         console.log("Employee added:", name);
 
-    });
+   }); // end submit event
 
  // DELETE EMPLOYEE
 
