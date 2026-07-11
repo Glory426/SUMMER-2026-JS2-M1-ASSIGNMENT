@@ -1,77 +1,77 @@
 // GET ADD EMPLOYEE FORM AND EMPLOYEE TABLE FROM THE DOM
 
-// SET A COUNT VARIABLE TO DISPLAY NEXT TO EMPLOYEES HEADER
-
+    const form = document.getElementById("addForm");
+    const table = document.getElementById("employees");
+    const empCount = document.getElementById("empCount");
 
 // ADD EMPLOYEE
 
-form.addEventListener('submit', (e) => {
+ let count = 0;
+    empCount.value = count;
 
-    window.addEventListener("load", () => {
-
-    const $ = id => document.getElementById(id);
-
-    const form = $("employeeForm");
-    const table = $("employees");
-    const count = $("count");
-
-    let employeeCount = 0;
+     form.addEventListener("submit", (e) => {
 
    
     // PREVENT FORM SUBMISSION
 
-     form.addEventListener("submit", e => {
-        e.preventDefault();
-
+      e.preventDefault();
 
     // GET THE VALUES FROM THE TEXT BOXES
 
-        const id = $("id").value;
-        const name = $("name").value;
-        const ext = $("ext").value;
-        const email = $("email").value;
-        const department = $("department").value;
+        const id = document.getElementById("id").value;
+        const name = document.getElementById("name").value;
+        const extension = document.getElementById("extension").value;
+        const email = document.getElementById("email").value;
+        const department = document.getElementById("department").value;
 
-
+      
     // INSERT A NEW ROW AT THE END OF THE EMPLOYEES TABLE
 
-       const row = table.insertRow();
+        const row = table.insertRow();
+
 
     // INSERT A CELL FOR EACH ITEM WITHIN THE NEW ROW
-    
- row.insertCell().appendChild(document.createTextNode(id));
-       
+
+        row.insertCell().appendChild(document.createTextNode(id));
+                 
     // APPEND THE TEXT VALUES AS TEXT NODES WITHIN THE CELLS
 
         row.insertCell().appendChild(document.createTextNode(name));
-        row.insertCell().appendChild(document.createTextNode(ext));
+        row.insertCell().appendChild(document.createTextNode(extension));
         row.insertCell().appendChild(document.createTextNode(email));
         row.insertCell().appendChild(document.createTextNode(department));
 
-        
     // CREATE THE DELETE BUTTON
 
         const deleteCell = row.insertCell();
         const button = document.createElement("button");
         button.textContent = "X";
         button.className = "btn btn-danger btn-sm";
-
         deleteCell.appendChild(button);
-
+       
         employeeCount++;
         count.value = employeeCount;
 
-
     // RESET THE FORM
-
-  form.reset();
+        form.reset();
         $("id").focus();
     });
 
 
     // SET FOCUS BACK TO THE ID TEXT BOX
 
-     table.addEventListener("click", e => {
+        document.getElementById("id").focus();
+
+     
+    // INCREMENENT THE NUMBER OF EMPLOYEES IN THE TABLE
+
+ count++;
+        empCount.value = count;
+        console.log(count);
+
+// DELETE EMPLOYEE
+
+table.addEventListener("click", (e) => {
 
         if (e.target.tagName === "BUTTON") {
 
@@ -79,18 +79,10 @@ form.addEventListener('submit', (e) => {
 
                 table.deleteRow(e.target.parentNode.parentNode.rowIndex);
 
-
-    // INCREMENENT THE NUMBER OF EMPLOYEES IN THE TABLE
-
-      employeeCount--;
-                count.value = employeeCount;
+                count--;
+                empCount.value = count;
             }
         }
-
     });
 
 });
-
-})
-
-// DELETE EMPLOYEE
