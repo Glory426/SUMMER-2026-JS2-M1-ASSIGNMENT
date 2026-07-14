@@ -50,7 +50,7 @@ window.addEventListener("load", () => {
 // CREATE THE DELETE BUTTON
 
         const button = document.createElement("button");
-        button.textContent = "X";
+        button.textContent = "x";
         button.className = "btn btn-danger btn-sm";
         deleteCell.appendChild(button);
 
